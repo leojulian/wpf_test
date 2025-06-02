@@ -1,0 +1,19 @@
+﻿<Window x:Class="UsingDelegateCommands.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:local="clr-namespace:UsingDelegateCommands"
+        mc:Ignorable="d"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <CheckBox Content="Can Execute Command" IsChecked="{Binding IsEnabled}"/>
+        <Button Content="DelegateCommand" Command="{Binding ExecuteDelegateCommand}"/>
+        <Button Content="DelegateCommand ObservesProperty" Command="{Binding DelegateCommandObservesCanExecute}"/>
+        <Button Content="DelegateCommand ObservesCanExecute" Command="{Binding DelegateCommandObservesProperty}"/>
+        <Button Content="DelegateCommand Generic" Command="{Binding ExecuteGenericDelegateCommand}" CommandParameter="Pass the paramenter"/>
+        <TextBlock Text="{Binding UpdateText}"/>
+    </StackPanel>
+</Window>

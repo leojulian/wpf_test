@@ -1,0 +1,31 @@
+﻿<Window x:Class="wpf_test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:wpf_test"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas x:Name="MainCanvas"/>
+        <Button x:Name="btnStart" Click="btnStart_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Content="Start"/>
+        <Button x:Name="btnStop" Click="btnStop_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Content="stop" Margin="100 0 0 0"/>
+
+        <PasswordBox x:Name="paswordBox" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="300 0 0 0" Width="100">
+            <behaviors:Interaction.Behaviors>
+                <local:PasswordBehavior/>
+            </behaviors:Interaction.Behaviors>        
+        </PasswordBox>
+
+        <!--<local:PersonExtension Name="test" Age="1"/>-->
+
+        <TreeView>
+            <TreeViewItem Header="123">
+                <TreeViewItem Header="123">1</TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="456">1</TreeViewItem>
+            <TreeViewItem Header="789">1</TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>
